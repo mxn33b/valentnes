@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-    background-image: url("images/backgroundforwebsite.jpg");
+    background-image: url("backgroundforwebsite.jpg");
     background-color: #ffb7c5; 
     /* 'cover' scales the image, which might shift your text slightly on different screens.
        If the text moves too much, try changing 'cover' to '100% 100%' */
@@ -80,4 +80,5 @@ body {
 @keyframes fly {
     0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
     100% { transform: translate(var(--tx), var(--ty)) scale(1.5); opacity: 0; }
+
 }
