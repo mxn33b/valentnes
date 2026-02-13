@@ -1,0 +1,83 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Prevents scrollbars when hearts fly out */
+}
+
+body {
+    background-image: url("images/backgroundforwebsite.jpg");
+    background-color: #ffb7c5; 
+    /* 'cover' scales the image, which might shift your text slightly on different screens.
+       If the text moves too much, try changing 'cover' to '100% 100%' */
+    background-size: cover;      
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+/* This container holds both buttons and moves them to your spot */
+/* REPLACE YOUR OLD .button-container WITH THIS */
+
+.button-container {
+    position: absolute;
+    
+    /* CHANGE THESE TWO NUMBERS to move the buttons */
+    /* top = vertical position (bigger number = lower down) */
+    top: 400px;  
+    
+    /* left = horizontal position (bigger number = further right) */
+    left: 700px; 
+    
+    /* This ensures the container doesn't block clicks on the empty space */
+    pointer-events: none; 
+}
+
+/* We need to re-enable clicking for the buttons inside the container */
+#yesbutton, #nobutton {
+    pointer-events: auto; 
+    
+    /* Keep the rest of your button styling below... */
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 50px;
+    color: #d3637c;
+    background-color: #fad1d9;
+    border: 5px solid #d3637c;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-right: 15px; 
+}
+
+
+#yesbutton:hover {
+    background-color: #ffeff3;
+    transform: scale(1.05);
+}
+
+#nobutton {
+    position: relative; /* Necessary for the 'run away' logic */
+}
+
+/* HEART ANIMATION */
+#heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.heart {
+    position: absolute;
+    font-size: 25px;
+    animation: fly 1s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fly {
+    0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
+    100% { transform: translate(var(--tx), var(--ty)) scale(1.5); opacity: 0; }
+}

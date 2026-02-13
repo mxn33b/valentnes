@@ -1,0 +1,24 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; 
+}
+
+body {
+    background-image: url("images/bg.png");
+    background-color: #ffb7c5; 
+    background-size: cover;      
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Trebuchet MS', sans-serif;
+    justify-content: center;   /* Center horizontally (Left/Right) */
+    align-items: center;       /* Center vertically (Up/Down) */
+    text-align: center;        /* Ensures text stays centered if it wraps to 2 lines */
+}
+
+h1 {
+    font-size: 80px;           
+    color: #d3637c;            
+    text-shadow: 3px 3px 0px rgb(123, 34, 117); 
+}
+

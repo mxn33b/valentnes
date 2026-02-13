@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <title>
+        YAYY
+    </title>
+     <link rel="stylesheet" href="style2.css">
+
+    <body>
+        <h1>
+            YAYY, I LOVEE YOUUU ❤️
+        </h1>
+        <img src="images/cutecat.gif" alt="Cute GIF">
+    </body>
+    <audio id="loveSong" loop autoplay>
+    <source src="images/song.mp3" type="audio/mpeg">
+    <script>
+            window.addEventListener('load', () => {
+                const audio = document.getElementById('loveSong');
+                
+                // Set volume to 50% so it doesn't blast her ears
+                audio.volume = 0.5; 
+
+                // Attempt to play immediately
+                audio.play().catch(error => {
+                    // IF the browser blocks it (common on phones), 
+                    // this code waits for her to tap *anywhere* on the screen
+                    // and then starts the music.
+                    document.body.addEventListener('click', () => {
+                        audio.play();
+                    }, { once: true });
+                });
+            });
+    </script>
+</audio>
+</html>
